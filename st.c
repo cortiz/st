@@ -47,17 +47,6 @@
 /* constants */
 #define ISO14755CMD		"dmenu -w \"$WINDOWID\" -p codepoint: </dev/null"
 
-enum term_mode {
-	MODE_WRAP        = 1 << 0,
-	MODE_INSERT      = 1 << 1,
-	MODE_ALTSCREEN   = 1 << 2,
-	MODE_CRLF        = 1 << 3,
-	MODE_ECHO        = 1 << 4,
-	MODE_PRINT       = 1 << 5,
-	MODE_UTF8        = 1 << 6,
-	MODE_SIXEL       = 1 << 7,
-};
-
 enum cursor_movement {
 	CURSOR_SAVE,
 	CURSOR_LOAD
@@ -713,7 +702,7 @@ execsh(char *cmd, char **args)
 	setenv("USER", pw->pw_name, 1);
 	setenv("SHELL", sh, 1);
 	setenv("HOME", pw->pw_dir, 1);
-	setenv("TERM", termname, 1);
+	setenv("TERM", "st-256color", 1);
 
 	signal(SIGCHLD, SIG_DFL);
 	signal(SIGHUP, SIG_DFL);

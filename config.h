@@ -16,11 +16,11 @@ static int borderpx = 2;
  * 4: value of shell in /etc/passwd
  * 5: value of shell in config.h
  */
-static char *shell = "/bin/sh";
+static char *shell = "/bin/fish";
 char *utmp = NULL;
 char *stty_args = "stty raw pass8 nl -echo -iexten -cstopb 38400";
 
-/* identification sequence returned in DA and DECID */
+/* identification sequence returned in "DA and DECID */
 char *vtiden = "\033[?6c";
 
 /* Kerning / character bounding-box multipliers */
@@ -54,7 +54,7 @@ static unsigned int blinktimeout = 800;
 /*
  * thickness of underline and bar cursors
  */
-static unsigned int cursorthickness = 2;
+static unsigned int cursorthickness = 1;
 
 /*
  * bell volume. It must be a value between -100 and 100. Use 0 for disabling
@@ -66,6 +66,8 @@ static int bellvolume = 0;
 char *termname = "st-256color";
 
 /*
+ *
+ *
  * spaces per tab
  *
  * When you are changing this value, don't forget to adapt the »it« value in
@@ -198,8 +200,8 @@ static MouseShortcut mshortcuts[] = {
 
 MouseKey mkeys[] = {
 	/* button               mask            function        argument */
-	{ Button4,              ShiftMask,      kscrollup,      {.i =  1} },
-	{ Button5,              ShiftMask,      kscrolldown,    {.i =  1} },
+	{ Button4,              XK_NO_MOD,      kscrollup,      {.i =  1} },
+	{ Button5,              XK_NO_MOD,      kscrolldown,    {.i =  1} },
 	{ Button4,              MODKEY,         kscrollup,      {.i =  1} },
 	{ Button5,              MODKEY,         kscrolldown,    {.i =  1} },
 	{ Button4,              MODKEY|ShiftMask,         zoom,      {.f =  +1} },
