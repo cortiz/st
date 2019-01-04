@@ -172,7 +172,6 @@ ResourcePref resources[] = {
 		{ "color15",      STRING,  &colorname[15] },
 		{ "background",   STRING,  &colorname[256] },
 		{ "foreground",   STRING,  &colorname[257] },
-		{ "cursorColor",  STRING,  &colorname[258] },
 		{ "termname",     STRING,  &termname },
 		{ "shell",        STRING,  &shell },
 		{ "xfps",         INTEGER, &xfps },
@@ -209,7 +208,7 @@ MouseKey mkeys[] = {
 };
 
 static char *openurlcmd[] = { "/bin/sh", "-c",
-    "xurls | dmenu -l 10 | xargs -r xdg-open",
+    "xurls | uniq | dmenu -l 10 | xargs -r xdg-open",
     "externalpipe", NULL };
 
 static Shortcut shortcuts[] = {
