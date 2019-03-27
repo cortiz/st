@@ -5,7 +5,7 @@
  *
  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
  */
-static char *font = "mono:pixelsize=16:antialias=true:autohint=true";
+static char *font = "Tamsyn:pixelsize=12:antialias=true:autohint=true";
 static int borderpx = 2;
 
 /*
@@ -63,7 +63,7 @@ static unsigned int cursorthickness = 1;
 static int bellvolume = 0;
 
 /* default TERM value */
-char *termname = "st-256color";
+char *termname = "xterm-256color";
 
 /*
  *
@@ -127,13 +127,13 @@ static unsigned int defaultrcs = 0;
  * 6: Bar ("|")
  * 7: Snowman ("☃")
  */
-static unsigned int cursorshape = 2;
+static unsigned int cursorshape = 4;
 
 /*
  * Default columns and rows numbers
  */
 
-static unsigned int cols = 80;
+static unsigned int cols = 120;
 static unsigned int rows = 24;
 
 /*
@@ -242,7 +242,7 @@ static Shortcut shortcuts[] = {
 	{ MODKEY|ShiftMask,     XK_J,           zoom,           {.f = -1} },
 	{ MODKEY|ShiftMask,     XK_U,           zoom,           {.f = +2} },
 	{ MODKEY|ShiftMask,     XK_D,           zoom,           {.f = -2} },
-    	{ MODKEY,		XK_l,		externalpipe,	{ .v = openurlcmd } },
+	{ MODKEY,		XK_l,		externalpipe,	{ .v = openurlcmd } },
 };
 
 /*
